@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="pt-BR">
+<!DOCTYPE html><html lang="pt-br">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -6,94 +6,94 @@
   <style>
     body {
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(to bottom right, #f8b6d0, #fdd8e7);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #c2185b, #880e4f); /* rosa mais escuro */
+      color: #fff;
       overflow-x: hidden;
-    }
-    .container {
-      max-width: 800px;
-      margin: 40px auto;
-      background-color: #fff0f5;
-      border-radius: 20px;
-      padding: 30px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-      position: relative;
-    }
-    h1, p {
-      text-align: center;
-      color: #5a2a49;
-    }
-    p {
-      font-size: 1rem;
-      line-height: 1.6;
-    }
-    img {
-      display: block;
-      margin: 30px auto;
-      max-width: 100%;
-      border-radius: 15px;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.2);
-    }
-    .contador {
-      font-size: 1.2rem;
-      text-align: center;
-      margin-top: 30px;
-      color: #e91e63;
-    }
-    .cora {
-      position: absolute;
-      font-size: 20px;
-      animation: subir 2s linear forwards;
-      color: #ff69b4;
-    }
-    @keyframes subir {
-      0% { opacity: 1; transform: translateY(0); }
-      100% { opacity: 0; transform: translateY(-100px); }
-    }
+    }.container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: rgba(255, 192, 203, 0.15); /* tom rosa transparente */
+  border-radius: 16px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+  text-align: center;
+  font-size: 1.6rem;
+}
+
+img {
+  display: block;
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin: 20px 0;
+}
+
+.poema {
+  text-align: center;
+  font-size: 1.1rem;
+  margin: 10px 0 30px 0;
+}
+
+.contador {
+  text-align: center;
+  font-size: 1rem;
+  margin-top: 30px;
+}
+
   </style>
 </head>
 <body>
-  <audio autoplay loop>
-    <source src="mac-miller.mp3" type="audio/mpeg" />
-  </audio>  <div class="container">
-    <h1>Oi meu amor, feliz dia dos namorados 💖</h1>
-    <p>Como eu sempre foram cartas resolvi inovar. Bem sobre hoje, no caso ontem já que hoje é 12 (eu acho), peço desculpas. Deveria ter tentado conversar. E oce disse que eu nunca desabafei com você, peço desculpas por isso também. Prometo falar mais. E sobre oce ter perguntado se eu queria desistir: TU CRIA VERGONHA NA CARA SIO! Até parece que eu vou desistir de oce, o amor da minha vida. EU TE AMO RABUDA.</p><img src="foto1.jpg" alt="Foto 1" />
-<p>Seus olhos, meu amor, são constelações em calma,
-Um universo inteiro que em silêncio me embala.
-Brilham mais que o sol ao nascer do dia,
-São espelhos da alma, pura poesia.</p>
+  <div class="container">
+    <h1>Oi meu amor, feliz dia dos namorados, como eu sempre foram cartas resolvi inovar, bem sobre hoje, no caso ontem ja que hoje é 12(eu acho) peço desculpas, deveria ter tentado conversar, e oce disse que eu nunca desabafei com você, peço desculpas por isso tbm, prometo falar mais, e sobre oce ter perguntado se eu queria desistir, TU CRIA VERGONHA NA CARA SIO, até parece que eu vou desistir de oce, o amor da minha vida, EU TE AMO RABUDA</h1><img src="foto1.jpg" alt="Foto 1">
+<div class="poema">Seus olhos são o universo onde me perco e me acho, estrelas brilhando só pra mim, no espaço mais bonito do mundo.</div>
 
-<img src="foto2.jpg" alt="Foto 2" />
-<p>O amor que sinto é chama que não se apaga,
-Mesmo no silêncio, teu nome minha alma embala.
-Em cada gesto teu, meu mundo ganha cor,
-Pois tudo é mais bonito quando existe amor.</p>
+<img src="foto2.jpg" alt="Foto 2">
+<div class="poema">O amor que sinto por você é como o vento: não se vê, mas se sente forte, doce e eterno.</div>
 
-<img src="foto3.jpg" alt="Foto 3" />
+<img src="foto3.jpg" alt="Foto 3">
 <div class="contador" id="contador"></div>
 
-  </div>  <script>
+  </div>  <audio autoplay loop>
+    <source src="mac-miller.mp3" type="audio/mpeg">
+    Seu navegador não suporta áudio.
+  </audio>  <script>
     const inicio = new Date("2024-08-21T17:12:00").getTime();
+    const contador = document.getElementById("contador");
     setInterval(() => {
       const agora = new Date().getTime();
       const diff = agora - inicio;
-
       const dias = Math.floor(diff / (1000 * 60 * 60 * 24));
       const horas = Math.floor((diff / (1000 * 60 * 60)) % 24);
       const minutos = Math.floor((diff / (1000 * 60)) % 60);
       const segundos = Math.floor((diff / 1000) % 60);
-
-      document.getElementById("contador").innerHTML = `${dias}d ${horas}h ${minutos}m ${segundos}s ❤️`;
+      contador.textContent = `${dias}d ${horas}h ${minutos}m ${segundos}s juntos 💖`;
     }, 1000);
 
-    document.addEventListener("click", function(e) {
-      const cora = document.createElement("div");
-      cora.className = "cora";
-      cora.style.left = e.clientX + "px";
-      cora.style.top = e.clientY + "px";
-      cora.innerText = "💖";
-      document.body.appendChild(cora);
-      setTimeout(() => document.body.removeChild(cora), 2000);
+    document.addEventListener('click', function(e) {
+      const heart = document.createElement('div');
+      heart.textContent = '❤️';
+      heart.style.position = 'absolute';
+      heart.style.left = `${e.pageX}px`;
+      heart.style.top = `${e.pageY}px`;
+      heart.style.fontSize = '20px';
+      heart.style.pointerEvents = 'none';
+      heart.style.animation = 'floatUp 1s ease-out forwards';
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 1000);
     });
+
+    const style = document.createElement('style');
+    style.textContent = `
+      @keyframes floatUp {
+        0% {transform: translateY(0); opacity: 1;}
+        100% {transform: translateY(-50px); opacity: 0;}
+      }
+    `;
+    document.head.appendChild(style);
   </script></body>
 </html>
