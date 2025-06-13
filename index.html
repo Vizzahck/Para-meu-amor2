@@ -1,0 +1,99 @@
+<!DOCTYPE html><html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Para Meu Amor</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom right, #f8b6d0, #fdd8e7);
+      overflow-x: hidden;
+    }
+    .container {
+      max-width: 800px;
+      margin: 40px auto;
+      background-color: #fff0f5;
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      position: relative;
+    }
+    h1, p {
+      text-align: center;
+      color: #5a2a49;
+    }
+    p {
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+    img {
+      display: block;
+      margin: 30px auto;
+      max-width: 100%;
+      border-radius: 15px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+    }
+    .contador {
+      font-size: 1.2rem;
+      text-align: center;
+      margin-top: 30px;
+      color: #e91e63;
+    }
+    .cora {
+      position: absolute;
+      font-size: 20px;
+      animation: subir 2s linear forwards;
+      color: #ff69b4;
+    }
+    @keyframes subir {
+      0% { opacity: 1; transform: translateY(0); }
+      100% { opacity: 0; transform: translateY(-100px); }
+    }
+  </style>
+</head>
+<body>
+  <audio autoplay loop>
+    <source src="mac-miller.mp3" type="audio/mpeg" />
+  </audio>  <div class="container">
+    <h1>Oi meu amor, feliz dia dos namorados 💖</h1>
+    <p>Como eu sempre foram cartas resolvi inovar. Bem sobre hoje, no caso ontem já que hoje é 12 (eu acho), peço desculpas. Deveria ter tentado conversar. E oce disse que eu nunca desabafei com você, peço desculpas por isso também. Prometo falar mais. E sobre oce ter perguntado se eu queria desistir: TU CRIA VERGONHA NA CARA SIO! Até parece que eu vou desistir de oce, o amor da minha vida. EU TE AMO RABUDA.</p><img src="foto1.jpg" alt="Foto 1" />
+<p>Seus olhos, meu amor, são constelações em calma,
+Um universo inteiro que em silêncio me embala.
+Brilham mais que o sol ao nascer do dia,
+São espelhos da alma, pura poesia.</p>
+
+<img src="foto2.jpg" alt="Foto 2" />
+<p>O amor que sinto é chama que não se apaga,
+Mesmo no silêncio, teu nome minha alma embala.
+Em cada gesto teu, meu mundo ganha cor,
+Pois tudo é mais bonito quando existe amor.</p>
+
+<img src="foto3.jpg" alt="Foto 3" />
+<div class="contador" id="contador"></div>
+
+  </div>  <script>
+    const inicio = new Date("2024-08-21T17:12:00").getTime();
+    setInterval(() => {
+      const agora = new Date().getTime();
+      const diff = agora - inicio;
+
+      const dias = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const horas = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const minutos = Math.floor((diff / (1000 * 60)) % 60);
+      const segundos = Math.floor((diff / 1000) % 60);
+
+      document.getElementById("contador").innerHTML = `${dias}d ${horas}h ${minutos}m ${segundos}s ❤️`;
+    }, 1000);
+
+    document.addEventListener("click", function(e) {
+      const cora = document.createElement("div");
+      cora.className = "cora";
+      cora.style.left = e.clientX + "px";
+      cora.style.top = e.clientY + "px";
+      cora.innerText = "💖";
+      document.body.appendChild(cora);
+      setTimeout(() => document.body.removeChild(cora), 2000);
+    });
+  </script></body>
+</html>
